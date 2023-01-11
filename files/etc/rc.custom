@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # /etc/rc.custom PrivateRouter Custom Startup Script
 
 START=99
