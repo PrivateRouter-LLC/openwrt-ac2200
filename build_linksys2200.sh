@@ -24,6 +24,6 @@ make image  PROFILE="linksys_mr8300" \
                      bash git git-http luci-base luci-ssl luci-mod-admin-full luci-theme-bootstrap \
                      kmod-usb-storage kmod-usb-ohci kmod-usb-uhci e2fsprogs fdisk resize2fs \
                      htop debootstrap luci-compat luci-lib-ipkg dnsmasq \
-                     curl jq" \
+                     curl jq jshn ip ipset iptables iptables-mod-tproxy resolveip dnsmasq-full" \
             FILES="${BASEDIR}/files/" \
             BIN_DIR="${OUTPUT}"
