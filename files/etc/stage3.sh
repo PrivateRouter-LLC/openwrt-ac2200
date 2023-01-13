@@ -44,6 +44,10 @@ while ! is_connected; do
 done
 log_say "Internet connection established"
 
+# Install requirements
+opkg update
+opkg install git git-http jq curl wget wget-ssl
+
 # Cleanup our auto-provision and prepare for first real boot
 [ -d /etc/auto-provision ] && rm -rf /etc/auto-provision
 echo "" > /etc/rc.local

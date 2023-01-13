@@ -40,6 +40,9 @@ installPackages()
     echo " █████   █████░░██████  ░░████████  ░░█████ ░░██████  █████           "
     echo "░░░░░   ░░░░░  ░░░░░░    ░░░░░░░░    ░░░░░   ░░░░░░  ░░░░░            "
 
+    # Fix https to http for mini routers
+    sed -i 's,https,http,g' /etc/opkg/distfeeds.conf;
+    # Update the package list
     opkg update
     #Go Go Packages
     opkg install wireguard-tools ath10k-board-qca4019 ath10k-board-qca9888 ath10k-board-qca988x ath10k-firmware-qca4019-ct ath10k-firmware-qca9888-ct ath10k-firmware-qca988x-ct attr avahi-dbus-daemon base-files block-mount busybox ca-bundle certtool cgi-io dbus dnsmasq dropbear e2fsprogs fdisk firewall fstools fwtool
