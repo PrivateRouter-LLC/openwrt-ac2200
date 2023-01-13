@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # utility functions for the various stages of autoprovisioning
 

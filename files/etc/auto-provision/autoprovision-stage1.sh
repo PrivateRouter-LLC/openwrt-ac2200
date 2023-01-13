@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # autoprovision stage 1: this script will be executed upon boot without a valid extroot (i.e. when rc.local is found and run from the internal overlay)
 

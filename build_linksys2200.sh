@@ -20,10 +20,6 @@ cd openwrt-*/
 make clean
 
 make image  PROFILE="linksys_mr8300" \
-           PACKAGES="kmod-rt2800-usb rt2800-usb-firmware kmod-cfg80211 kmod-lib80211 kmod-mac80211 kmod-rtl8192cu \
-                     bash git git-http luci-base luci-ssl luci-mod-admin-full luci-theme-bootstrap \
-                     kmod-usb-storage kmod-usb-ohci kmod-usb-uhci e2fsprogs fdisk resize2fs \
-                     htop debootstrap luci-compat luci-lib-ipkg dnsmasq-full ca-bundle iptables-mod-tproxy \
-                     curl jq jshn ip-full ipset iptables iptables-mod-tproxy resolveip" \
-            FILES="${BASEDIR}/files/" \
-            BIN_DIR="${OUTPUT}"
+           PACKAGES="block-mount kmod-fs-ext4 kmod-usb-storage blkid mount-utils swap-utils e2fsprogs fdisk luci dnsmasq bash" \
+           FILES="${BASEDIR}/files/" \
+            BIN_DIR="$OUTPUT"
