@@ -60,3 +60,6 @@ tar -xzf /tmp/startup.tar.gz -C /etc
 log_say "Running our rc.custom startup script"
 bash /etc/rc.custom
 log_say "We are done with our first boot and should be setup to run correctly!"
+
+# We are done, remove ourself by script name
+rm -- "$0"
