@@ -92,6 +92,9 @@ installPackages()
     opkg install v2raya
 
     opkg install /etc/luci-app-v2raya_6_all.ipk
+
+    # Switch back to https
+    sed -i 's,http,https,g' /etc/opkg/distfeeds.conf;
 }
 
 autoprovisionStage2()
