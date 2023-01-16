@@ -1,2 +1,0 @@
-REPO=testing
-export REPO
