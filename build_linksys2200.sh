@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OUTPUT="$(pwd)/images"
-BUILD_VERSION="21.02.3"
+BUILD_VERSION="21.02.2"
 BUILDER="https://downloads.openwrt.org/releases/${BUILD_VERSION}/targets/ipq40xx/generic/openwrt-imagebuilder-${BUILD_VERSION}-ipq40xx-generic.Linux-x86_64.tar.xz"
 
 BASEDIR=$(realpath "$0" | xargs dirname)
