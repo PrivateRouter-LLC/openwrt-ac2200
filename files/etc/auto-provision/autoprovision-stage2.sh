@@ -43,7 +43,17 @@ installPackages()
     # Fix https to http for mini routers
     sed -i 's,https,http,g' /etc/opkg/distfeeds.conf;
     # Update the package list
-    opkg update
+      opkg update
+   #install mesh support
+   opkg remove wpad
+   opkg remove wpad wpad-basic
+   opkg remove wpad-basic-openssl
+   opkg remove wpad-basic-wolfssl
+   opkg remove wpad-wolfssl
+   opkg install wpad-mesh-openssl
+   opkg install kmod-batman-adv
+   opkg install batctl
+   opkg install avahi-autoipd
     #Go Go Packages
     opkg install wireguard-tools ath10k-board-qca4019 ath10k-board-qca9888 ath10k-board-qca988x ath10k-firmware-qca4019-ct ath10k-firmware-qca9888-ct ath10k-firmware-qca988x-ct attr avahi-dbus-daemon base-files block-mount busybox ca-bundle certtool cgi-io dbus dnsmasq dropbear e2fsprogs fdisk firewall fstools fwtool
 
@@ -67,13 +77,13 @@ installPackages()
 
     opkg install kmod-usb-net-cdc-ncm kmod-usb-net-cdc-subset kmod-usb-net-ipheth kmod-usb-storage kmod-usb2 kmod-usb3 kmod-wireguard libatomic1 libattr libavahi-client minidlna mtd netifd odhcp6c odhcpd-ipv6only openssh-sftp-client
 
-    opkg install openvpn-openssl openwrt-keyring opkg ppp ppp-mod-pppoe procd resolveip rpcd rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-luci rpcd-mod-rrdns swconfig terminfo ubi-utils uboot-envtools ubox ubus ubusd uci uclient-fetch uhttpd uhttpd-mod-ubus
+    opkg install openwrt-keyring opkg ppp ppp-mod-pppoe procd resolveip rpcd rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-luci rpcd-mod-rrdns swconfig terminfo ubi-utils uboot-envtools ubox ubus ubusd uci uclient-fetch uhttpd uhttpd-mod-ubus
 
     opkg install urandom-seed urngd usbids usbmuxd usbutils usign watchcat wireguard-tools wireless-regdb wpad-basic-wolfssl
 
     opkg install zlib kmod-usb-storage block-mount luci-app-minidlna kmod-fs-ext4 kmod-fs-exfat fdisk luci-compat luci-lib-ipkg luci-proto-wireguard luci-app-wireguard luci-i18n-wireguard-en watchcat wg-installer-client
 
-    opkg install wireguard-tools luci-app-openvpn luci-app-watchcat luci-app-wireguard
+    opkg install luci-app-watchcat
 
     opkg install curl git git-http wget jq
 
@@ -85,13 +95,13 @@ installPackages()
 
     ## Remove DNSMasq
 
-    opkg remove dnsmasq
+    #opkg remove dnsmasq
 
-    opkg install dnsmasq-full
+    #opkg install dnsmasq-full
 
-    opkg install v2raya
+    #opkg install v2raya
 
-    opkg install /etc/luci-app-v2raya_6_all.ipk
+    #opkg install /etc/luci-app-v2raya_6_all.ipk
 
     # Switch back to https
     sed -i 's,http,https,g' /etc/opkg/distfeeds.conf;
