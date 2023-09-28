@@ -13,6 +13,6 @@ This repository houses the build files for our customized OpenWRT image tailored
 ## OpenWRT Build Script
 The OpenWRT build script available in this repository helps in automating the process of creating the custom OpenWRT image for Linksys AC2200 routers. To run the build script, clone the repository, navigate to the directory containing the build script, and execute it.
 ```sh
-git clone https://github.com/PrivateRouter/openwrt-linksys-ac2200.git
-cd openwrt-linksys-ac2200
-./build_script.sh
+git clone git@github.com:PrivateRouter-LLC/openwrt-ac2200.git
+cd openwrt-ac2200
+./build_linksys2200.sh
