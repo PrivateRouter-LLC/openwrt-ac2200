@@ -44,17 +44,13 @@ installPackages()
     sed -i 's,https,http,g' /etc/opkg/distfeeds.conf;
     # Update the package list
       opkg update
-   #install mesh support
-   opkg remove wpad
-   opkg remove wpad wpad-basic
-   opkg remove wpad-basic-openssl
-   opkg remove wpad-basic-wolfssl
-   opkg remove wpad-wolfssl
-   opkg install wpad-mesh-openssl
-   opkg install kmod-batman-adv
-   opkg install batctl
-   opkg install avahi-autoipd
-   opkg install /etc/luci-app-easymesh_2.1_all.ipk
+  ## INSTALL MESH  ##
+    log_say "Installing Mesh Packages..."
+    opkg install tgrouterappstore luci-app-shortcutmenu luci-app-poweroff luci-app-wizard
+    opkg remove wpad wpad-basic wpad-basic-openssl wpad-basic-wolfssl wpad-wolfssl
+    opkg install wpad-mesh-openssl kmod-batman-adv batctl avahi-autoipd batctl-full luci-app-dawn
+    opkg install /etc/luci-app-easymesh_2.2_all.ipk
+    opkg install /etc/luci-proto-batman-adv_git-22.104.47289-0a762fd_all.ipk
     #Go Go Packages
     opkg install wireguard-tools ath10k-board-qca4019 ath10k-board-qca9888 ath10k-board-qca988x ath10k-firmware-qca4019-ct ath10k-firmware-qca9888-ct ath10k-firmware-qca988x-ct attr avahi-dbus-daemon base-files block-mount busybox ca-bundle certtool cgi-io dbus dnsmasq dropbear e2fsprogs fdisk firewall fstools fwtool
 
