@@ -19,7 +19,7 @@ cd openwrt-*/
 # clean previous images
 make clean
 
-make image  PROFILE="linksys_mr8300" \
+make image  PROFILE="linksys_ea8300" \
            PACKAGES="block-mount kmod-fs-ext4 kmod-usb-storage blkid mount-utils swap-utils e2fsprogs fdisk luci dnsmasq bash git git-http jq" \
            FILES="${BASEDIR}/files/" \
             BIN_DIR="$OUTPUT"
